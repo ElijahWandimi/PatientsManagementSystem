@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS Patient_db;
+
+USE Patient_db;
+
+CREATE TABLE IF NOT EXISTS Patients(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(25) NOT NULL,
+    lastName VARCHAR(25) NOT NULL,
+    middleName VARCHAR(25) NOT NULL,
+    age INT NOT NULL,
+    IDNumber VARCHAR(25) NOT NULL,
+    address VARCHAR(25) NOT NULL,
+    phoneNumber VARCHAR(25) NOT NULL,
+    gender VARCHAR(25) NOT NULL
+    );
