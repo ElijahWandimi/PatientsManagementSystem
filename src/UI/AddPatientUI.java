@@ -1,8 +1,12 @@
 package UI;
 
+import model.Constant;
+import model.PatientDetails;
+
 import  javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.SQLException;
 
 public class AddPatientUI extends JPanel implements ActionListener {
     GridBagConstraints gbc = new GridBagConstraints();
@@ -109,7 +113,13 @@ public class AddPatientUI extends JPanel implements ActionListener {
             String IDNumber = txtIDNumber.getText();
             String address = txtAddress.getText();
             int phoneNumber = Integer.parseInt(txtPhoneNumber.getText());
+            PatientDetails patient = new PatientDetails(firstName, lastName, IDNumber, address, phoneNumber, age, middleName, gender);
             // TODO: add patient to database
+            try {
+                Constant.PATIENT_DAO.addPatient(patient);
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
 
             clearFields();
         }

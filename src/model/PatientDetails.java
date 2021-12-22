@@ -16,6 +16,7 @@ public class PatientDetails extends Person implements DetailOps {
         this.fullName = firstName + " " + middleName + " " + lastName;
     }
 
+
     public String getMiddleName() {
         return middleName;
     }
@@ -23,6 +24,12 @@ public class PatientDetails extends Person implements DetailOps {
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender){this.gender=gender;}
 
 
     @Override

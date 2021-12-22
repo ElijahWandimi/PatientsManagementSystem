@@ -10,6 +10,6 @@ CREATE TABLE IF NOT EXISTS Patients(
     age INT NOT NULL,
     IDNumber VARCHAR(25) NOT NULL,
     address VARCHAR(25) NOT NULL,
-    phoneNumber VARCHAR(25) NOT NULL,
+    phoneNumber INT NOT NULL,
     gender VARCHAR(25) NOT NULL
     );
