@@ -4,11 +4,26 @@ import model.PatientDetails;
 import java.sql.*;
 
 public class Sql2PatientDao {
-    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital?useSSL=false", "root", "root");
+    static Connection connection;
+
+    static {
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital?useSSL=false", "root", "root");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public Sql2PatientDao() throws SQLException {
         this.getConnection();
     }
+
+    public static String[] getPatientDetails() throws SQLException {
+        Statement result = connection.createStatement();
+        ResultSet resultSet = result.executeQuery("SELECT * FROM patient_details");
+        return resultSet.toString().split(",");
+    }
+
     public Connection getConnection() throws SQLException {
        return connection;
     }

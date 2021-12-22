@@ -117,11 +117,10 @@ public class AddPatientUI extends JPanel implements ActionListener {
             // TODO: add patient to database
             try {
                 Constant.PATIENT_DAO.addPatient(patient);
+                clearFields();
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
-
-            clearFields();
         }
         else if (e.getSource() == btnCancel) {
             clearFields();
