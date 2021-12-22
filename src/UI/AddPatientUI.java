@@ -115,12 +115,8 @@ public class AddPatientUI extends JPanel implements ActionListener {
             int phoneNumber = Integer.parseInt(txtPhoneNumber.getText());
             PatientDetails patient = new PatientDetails(firstName, lastName, IDNumber, address, phoneNumber, age, middleName, gender);
             // TODO: add patient to database
-            try {
-                Constant.PATIENT_DAO.addPatient(patient);
+//                Constant.PATIENT_DAO.addPatient(patient);
                 clearFields();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
         }
         else if (e.getSource() == btnCancel) {
             clearFields();

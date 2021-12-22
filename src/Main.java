@@ -2,6 +2,7 @@ import UI.HomeUI;
 import UI.ParentUIFrame;
 
 import javax.swing.*;
+import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,7 +22,11 @@ public class Main {
 
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new ParentUIFrame();
+                try {
+                    new ParentUIFrame();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

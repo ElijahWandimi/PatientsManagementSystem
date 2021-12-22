@@ -12,7 +12,7 @@ public class ShowDetailsUI extends JPanel {
     private String[][] data = {Sql2PatientDao.getPatientDetails()};
     JTable table = new JTable(data, columnNames);
 
-    public ShowDetailsUI(String firstName, String lastName, String IDNumber, String address, int phoneNumber, int age, String middleName, String gender) throws SQLException {
+    public ShowDetailsUI() throws SQLException {
         setLayout(new GridBagLayout());
         gbc.gridx = 0;
         gbc.gridy = 0;

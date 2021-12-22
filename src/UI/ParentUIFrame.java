@@ -2,9 +2,10 @@ package UI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 public class ParentUIFrame  extends JFrame {
-    public ParentUIFrame() {
+    public ParentUIFrame() throws SQLException {
         super("Patient Registration");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
